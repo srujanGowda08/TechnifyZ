@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Send } from "lucide-react";
+import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,8 +14,28 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+
+    emailjs
+      .send(
+        "service_o5t778q",
+        "template_28tca9j",
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "OYuWSXPW9ifvsii49" // Replace with your EmailJS public key
+      )
+      .then(
+        (response) => {
+          toast.success("Message sent successfully!");
+          setFormData({ name: "", email: "", subject: "", message: "" }); // Clear form
+        },
+        (error) => {
+          toast.error("Failed to send message. Please try again later.");
+        }
+      );
   };
 
   const handleChange = (e) => {
