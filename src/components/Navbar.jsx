@@ -131,7 +131,16 @@ const Navbar = () => {
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="flex flex-col pt-24 px-4">
+          <div className="flex flex-col pt-16 px-4 relative">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-4 text-white text-lg focus:outline-none"
+              aria-label="Close menu"
+            >
+              &times;
+            </button>
+
             {navLinks.map((link) => (
               <Link
                 key={link.to}
