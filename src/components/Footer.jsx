@@ -4,9 +4,9 @@ import { Link } from "react-scroll";
 const Footer = () => {
   const quickLinks = ["about", "products", "features", "contact"];
   const socialLinks = [
+    { icon: "linkedin", url: "https://www.linkedin.com/company/technifyz/" },
     { icon: "facebook", url: "#" },
     { icon: "twitter", url: "#" },
-    { icon: "linkedin", url: "#" },
     { icon: "instagram", url: "#" },
   ];
 
