@@ -11,6 +11,7 @@ const Products = () => {
       gradient: "from-pink-500 via-purple-500 to-indigo-500",
       bgPattern:
         "radial-gradient(circle at 20% 20%, rgba(219, 39, 119, 0.1) 0%, transparent 50%)",
+      link: "https://github.com/srujanGowda08/GroceryShare",
     },
     {
       title: "Coming Soon",
@@ -19,6 +20,7 @@ const Products = () => {
       gradient: "from-indigo-500 via-purple-500 to-pink-500",
       bgPattern:
         "radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 50%)",
+      link: "https://github.com/srujanGowda08/",
     },
     {
       title: "Coming Soon",
@@ -27,6 +29,7 @@ const Products = () => {
       gradient: "from-purple-500 via-pink-500 to-indigo-500",
       bgPattern:
         "radial-gradient(circle at 50% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%)",
+      link: "https://github.com/srujanGowda08/",
     },
   ];
 
@@ -85,11 +88,13 @@ const Products = () => {
                 {/* Learn More Button */}
                 <div className="absolute bottom-8 right-8">
                   <button className="group/btn flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-300">
-                    <span>Learn more</span>
-                    <ArrowRight
-                      size={20}
-                      className="transform transition-transform duration-300 group-hover/btn:translate-x-1"
-                    />
+                    <a href={product.link}>
+                      <span>Learn more</span>
+                      <ArrowRight
+                        size={20}
+                        className="transform transition-transform duration-300 group-hover/btn:translate-x-1"
+                      />
+                    </a>
                   </button>
                 </div>
               </div>
