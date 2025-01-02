@@ -23,7 +23,7 @@ const Products = () => {
       link: "https://github.com/srujanGowda08/",
     },
     {
-      title: "Coming Soon",
+      title: "ProFindry",
       description: "Coming Soon",
       Icon: Shield,
       gradient: "from-purple-500 via-pink-500 to-indigo-500",
