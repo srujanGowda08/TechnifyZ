@@ -1,88 +1,61 @@
 import React from "react";
-import { Brain, Users, Shield, Lightbulb } from "lucide-react";
+import { Target, Rocket, Wrench } from "lucide-react";
 
 const About = () => {
-  const features = [
+  const sections = [
     {
-      title: "Innovative Solutions",
+      title: "Our Vision",
       description:
-        "We aim to revolutionize industries with cutting-edge technologies, making processes smoother, faster, and more efficient.",
-      Icon: Lightbulb,
+        "To become a trusted web and mobile development company by serving clients from all over the international frontiers. We have a legacy of working hand-in-hand with our clients and keep transparent communication at every level of the development process.",
+      Icon: Target,
+      color: "from-cyan-500 to-blue-500",
     },
     {
-      title: "Customer-Centric Approach",
+      title: "Our Mission",
       description:
-        "We focus on understanding and addressing the unique needs of our customers, providing personalized services and long-term support.",
-      Icon: Users,
+        "Our mission is to build a strong digital transformational focus and empower SMBs and Enterprises and make them more agile and competitive by leveraging new technologies. Together, we strive to enhance your profitability, and market position in their competitive landscape.",
+      Icon: Rocket,
+      color: "from-blue-500 to-purple-500",
     },
     {
-      title: "Data Security & Privacy",
+      title: "Our Expertise",
       description:
-        "Your data is safeguarded with the highest standards of encryption and strict privacy policies, ensuring peace of mind.",
-      Icon: Shield,
-    },
-    {
-      title: "Empowering Growth",
-      description:
-        "We work relentlessly to empower businesses and individuals to achieve their goals with state-of-the-art tools and solutions.",
-      Icon: Brain,
+        "We specialize in building robust web and mobile applications using modern tech stacks. Our core strengths lie in MERN stack development, scalable backend systems, intuitive UI/UX design, and full-cycle product development tailored to client needs.",
+      Icon: Wrench,
+      color: "from-purple-500 to-cyan-500",
     },
   ];
 
   return (
-    <section
-      id="about"
-      className="relative min-h-screen py-20 overflow-hidden bg-gradient-to-br from-purple-950 via-violet-900 to-purple-900"
-    >
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-pink-500/30 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/3 left-1/3 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 right-1/2 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl" />
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="container relative mx-auto px-6">
-        <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-5xl font-black">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">
+    <section id="about" className="relative py-20 bg-gradient-to-br from-slate-800 to-slate-900">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-black mb-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
               About
             </span>{" "}
             <span className="text-white">Us</span>
           </h2>
-          <p className="mt-4 text-xl text-gray-300/90">
-            At Technifyz, we're focused on creating simple solutions that make
-            life easier.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            At TechnifyZ, we’re passionate about creating innovative solutions that transform businesses and drive digital excellence.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group relative"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300" />
-              <div className="relative p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 hover:border-purple-500/50 transition-colors duration-300">
-                <div className="mb-4 inline-block p-3 rounded-xl bg-gradient-to-r from-pink-500 to-purple-500">
-                  <feature.Icon className="w-6 h-6 text-white" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sections.map((section, index) => (
+            <div key={index} className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+              <div className="relative p-6 rounded-2xl bg-slate-700/50 backdrop-blur-sm border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300">
+                <div className={`mb-4 inline-block p-3 rounded-xl bg-gradient-to-r ${section.color}`}>
+                  <section.Icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-300/90">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-white mb-4">{section.title}</h3>
+                <p className="text-gray-300">{section.description}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
-
-      {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-purple-950 to-transparent" />
     </section>
   );
 };

@@ -5,13 +5,12 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Products from "./components/Products";
-import Features from "./components/Features";
-import Testimonials from "./components/Testimonials";
-import Founder from "./components/Founder";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Services from "./components/Services";
+import Career from "./components/Career";
 
 function App() {
   useEffect(() => {
@@ -54,10 +53,9 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Products />
-      <Features />
-      <Testimonials />
-      <Founder />
+      <Services/>
+      <Career/>
+      {/* <Products /> */}
       <Contact />
       <Footer />
     </div>
